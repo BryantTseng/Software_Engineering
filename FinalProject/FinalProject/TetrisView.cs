@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace FinalProject
 {
@@ -70,9 +71,130 @@ namespace FinalProject
         public void ChangeGameView()
         {
             //may made a tetrisView array, and random choose one to show
+
+            Random Number = new Random();
+
+            switch (Number.Next() % 2)
+            {
+                //case 0 is B10415039_view
+                case 0:
+                    this.SuspendLayout();
+                    // 
+                    // label1
+                    // 
+                    this.label1.Location = new System.Drawing.Point(12, 186);
+                    // 
+                    // panel1
+                    // 
+                    this.panel1.BackColor = System.Drawing.Color.Black;
+                    this.panel1.Location = new System.Drawing.Point(183, 12);
+                    // 
+                    // panel2
+                    // 
+                    this.panel2.BackColor = System.Drawing.Color.Black;
+                    this.panel2.Location = new System.Drawing.Point(12, 12);
+                    // 
+                    // label2
+                    // 
+                    this.label2.Location = new System.Drawing.Point(7, 236);
+                    // 
+                    // button1
+                    // 
+                    this.button1.BackColor = System.Drawing.Color.IndianRed;
+                    this.button1.Location = new System.Drawing.Point(12, 288);
+                    this.button1.UseVisualStyleBackColor = false;
+                    // 
+                    // button2
+                    // 
+                    this.button2.BackColor = System.Drawing.Color.IndianRed;
+                    this.button2.Location = new System.Drawing.Point(12, 349);
+                    this.button2.UseVisualStyleBackColor = false;
+                    // 
+                    // button3
+                    // 
+                    this.button3.BackColor = System.Drawing.Color.IndianRed;
+                    this.button3.Location = new System.Drawing.Point(12, 410);
+                    this.button3.UseVisualStyleBackColor = false;
+                    // 
+                    // button4
+                    // 
+                    this.button4.BackColor = System.Drawing.Color.IndianRed;
+                    this.button4.Location = new System.Drawing.Point(12, 471);
+                    this.button4.UseVisualStyleBackColor = false;
+                    // 
+                    // B10415039_view
+                    // 
+                    this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                    this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                    this.ClientSize = new System.Drawing.Size(555, 547);
+                    this.Name = "B10415039_view";
+                    this.Controls.SetChildIndex(this.panel1, 0);
+                    this.Controls.SetChildIndex(this.panel2, 0);
+                    this.Controls.SetChildIndex(this.label1, 0);
+                    this.Controls.SetChildIndex(this.label2, 0);
+                    this.Controls.SetChildIndex(this.button1, 0);
+                    this.Controls.SetChildIndex(this.button2, 0);
+                    this.Controls.SetChildIndex(this.button3, 0);
+                    this.Controls.SetChildIndex(this.button4, 0);
+                    this.ResumeLayout(false);
+                    break;
+
+                //case 0 is B10332036_view
+                case 1:
+                    this.SuspendLayout();
+
+                    // panel1
+                    this.panel1.BackColor = System.Drawing.Color.Green;
+                    this.panel1.Location = new System.Drawing.Point(5, 5);
+
+                    // panel2
+                    this.panel2.BackColor = System.Drawing.Color.Gold;
+                    this.panel2.Location = new System.Drawing.Point(370, 5);
+
+                    //label1
+                    this.label1.Location = new System.Drawing.Point(370, 180);
+                    label1.ForeColor = Color.Red;
+
+                    //label2
+                    this.label2.Location = new System.Drawing.Point(370, 220);
+                    label2.ForeColor = Color.Green;
+
+                    //button1
+                    this.button1.BackColor = System.Drawing.Color.Gold;
+                    this.button1.Location = new System.Drawing.Point(370, 280);
+
+                    //button2
+                    this.button2.BackColor = System.Drawing.Color.Gold;
+                    this.button2.Location = new System.Drawing.Point(370, 340);
+
+                    //button3
+                    this.button3.BackColor = System.Drawing.Color.Gold;
+                    this.button3.Location = new System.Drawing.Point(370, 350);
+
+                    //button4
+                    this.button3.BackColor = System.Drawing.Color.Gold;
+                    this.button3.Location = new System.Drawing.Point(370, 400);
+
+                    // 
+                    // B10332036_view
+                    // 
+                    this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                    this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                    this.ClientSize = new System.Drawing.Size(535, 530);
+                    this.Name = "B10332036_view";
+
+                    this.ResumeLayout(false);
+                    break;
+                //case 2:
+                //case 3:
+                //case 4:
+            }
+
         }
-        // be inform the state is changed, then modify the model to new model
-        public void stateHasChanged(TetrisModel model)
+            // be inform the state is changed, then modify the model to new model
+            public void stateHasChanged(TetrisModel model)
         {
             tm = model;
         }
@@ -146,8 +268,10 @@ namespace FinalProject
         }
         // change color of every picturebox in matrix to background color
         private void ClearNextPanel() {
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 4; j++) {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
                     allCubesOnNext[i, j].BackColor = panel2.BackColor;
                 }
             }
@@ -280,7 +404,8 @@ namespace FinalProject
                     }
                 }
             }
-            else {
+            else
+            {
                 // if the game is over, then pause game
                 timer1.Enabled = false;
                 timer2.Enabled = false;
