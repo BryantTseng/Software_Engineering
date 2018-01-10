@@ -33,3 +33,7 @@ C:\Users\user1\Desktop\軟工測試\Software_Engineering\FinalProject\FinalProje
 C:\Users\user1\Desktop\軟工測試\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\user1\Desktop\軟工測試\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\user1\Desktop\軟工測試\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\s2g09\Downloads\Software_Engineering\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
+C:\Users\s2g09\Downloads\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\s2g09\Downloads\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\s2g09\Downloads\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
