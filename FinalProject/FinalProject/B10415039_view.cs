@@ -91,22 +91,52 @@ namespace FinalProject
             // 
             // label1
             // 
-            this.label1.Text = "GameOver";
+            this.label1.Location = new System.Drawing.Point(12, 186);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(183, 12);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(7, 236);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.IndianRed;
+            this.button1.Location = new System.Drawing.Point(12, 288);
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.IndianRed;
+            this.button2.Location = new System.Drawing.Point(12, 349);
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.IndianRed;
+            this.button3.Location = new System.Drawing.Point(12, 410);
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.IndianRed;
+            this.button4.Location = new System.Drawing.Point(12, 471);
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // B10415039_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(535, 530);
+            this.ClientSize = new System.Drawing.Size(555, 547);
             this.Name = "B10415039_view";
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
