@@ -211,16 +211,19 @@ namespace FinalProject
                         //near the buttom
                         int x = nowBlockIndex[i].Getx();
                         int y = nowBlockIndex[i].Gety();
-                        if (y+1 > 12)
-                        {
-                            throw new Exception();
-                        }
-                        if ((allBlocks[y + 1,x].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y,x])))
+                        if (y+1>12||(allBlocks[y + 1, x].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y+1, x])))
                         {
                             nowBlock.SetNowState(States.Stop);
                             tv.SetNowBlock(null);
                             throw new Exception();
                         }
+                        //if (y+1 > 12)
+                        //{
+                        //    nowBlock.SetNowState(States.Stop);
+                        //    tv.SetNowBlock(null);
+                        //    throw new Exception();
+                        //}
+                       
                     }
                     // change the color of cubes in block to background color
                     // and calculate new index for every cubes
