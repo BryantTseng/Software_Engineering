@@ -96,7 +96,7 @@ namespace FinalProject
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(183, 12);
+            this.panel1.Location = new System.Drawing.Point(184, 12);
             // 
             // panel2
             // 

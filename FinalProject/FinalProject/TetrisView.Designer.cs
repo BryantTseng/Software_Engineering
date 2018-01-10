@@ -57,20 +57,22 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(365, 187);
+            this.label1.Font = new System.Drawing.Font("Feast of Flesh BB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(365, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 25);
+            this.label1.Size = new System.Drawing.Size(165, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "時間: 0s";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(365, 236);
+            this.label2.Font = new System.Drawing.Font("Feast of Flesh BB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(371, 199);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 25);
+            this.label2.Size = new System.Drawing.Size(165, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "分數: 0分";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,8 +90,9 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(370, 406);
+            this.button3.Font = new System.Drawing.Font("It Lives In The Swamp BRK", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Yellow;
+            this.button3.Location = new System.Drawing.Point(370, 355);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 55);
             this.button3.TabIndex = 6;
@@ -99,8 +102,9 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(370, 346);
+            this.button2.Font = new System.Drawing.Font("It Lives In The Swamp BRK", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Yellow;
+            this.button2.Location = new System.Drawing.Point(370, 294);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 55);
             this.button2.TabIndex = 5;
@@ -110,8 +114,9 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(370, 286);
+            this.button1.Font = new System.Drawing.Font("It Lives In The Swamp BRK", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(370, 233);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 55);
             this.button1.TabIndex = 4;
@@ -121,17 +126,19 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(370, 467);
+            this.button4.Font = new System.Drawing.Font("It Lives In The Swamp BRK", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Yellow;
+            this.button4.Location = new System.Drawing.Point(370, 416);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 55);
+            this.button4.Size = new System.Drawing.Size(160, 109);
             this.button4.TabIndex = 7;
-            this.button4.Text = "ChangeView";
+            this.button4.Text = "Change\r\nView";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // TetrisView
             // 
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(535, 530);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
