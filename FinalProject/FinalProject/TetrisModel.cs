@@ -258,12 +258,15 @@ namespace FinalProject
         {
             if (nowBlock != null)
             {
-                while (true)
+                if (nowBlock.GetNowState() != States.Stop)
                 {
-                    try { DropDownSlow(nowBlock, allBlocks); }
-                    catch (Exception e)
+                    while (true)
                     {
-                        break;
+                        try { DropDownSlow(nowBlock, allBlocks); }
+                        catch (Exception e)
+                        {
+                            break;
+                        }
                     }
                 }
             }
