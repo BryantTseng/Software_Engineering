@@ -434,5 +434,9 @@ namespace FinalProject
         public Label GetLabel1() {
             return this.label1;
         }
+        public Label GetLabel2()
+        {
+            return this.label2;
+        }
     }
 }

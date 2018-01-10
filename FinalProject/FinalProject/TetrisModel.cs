@@ -19,7 +19,7 @@ namespace FinalProject
         public String MoveDownFastState = "MOVE_DOWN_FAST";
         public String RotateState = "ROTATE";
         public String EXIT_STATE = "EXIT";
-
+        public int score = 0;
 
         public TetrisModel(TetrisView view)
         {
@@ -272,6 +272,7 @@ namespace FinalProject
         public void RemoveLine(PictureBox[,] allBlocks)
         {
             Panel panelOnShow = tv.GetPanel1();
+            Label scoretext = tv.GetLabel2();
             System.Drawing.Color backcolor = panelOnShow.BackColor;
             for(int i = 12; i >=0; i--)//from bottum to top
             {
@@ -285,6 +286,7 @@ namespace FinalProject
                         }
                         if (j == 8)//this row is all filled, start to move all the cube above this row downward
                         {
+                            scoretext.Text = "分數: " + (++score) + "分";
                             for(int k = i; k >= 0; k--)//from the row that is filled to the top
                             { 
                                 for(int l = 0; l < 9; l++)
@@ -299,6 +301,7 @@ namespace FinalProject
                                     }
                                 }
                             }
+                            i++;
                         }
                     }
                 }

@@ -48,4 +48,3 @@ C:\Users\JackyWu\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debu
 C:\Users\JackyWu\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\JackyWu\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\Bryant\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.B10332036_view.resources
-C:\Users\Bryant\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.B10415040_view.resources
