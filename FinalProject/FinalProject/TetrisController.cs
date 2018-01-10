@@ -25,78 +25,7 @@ namespace FinalProject
         // if user has inputed, then do the responding work
         public void userHasInput(string userInput)
         {
-            string nowState = tm.getState();
-
-            if (userInput != "" && userInput.Length != 0)
-            {
-                if (userInput == MoveLeftCommand)
-                {
-                    tm.setState(tm.MoveLeftState);
-                    try
-                    {
-                        tm.MoveLeft(tv.GetNowBlock());
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.GetType()+": Move left");
-                    }
-                tm.setState(tm.IdleState);
-                }
-                else if (userInput == MoveRightCommand)
-                {
-                    tm.setState(tm.MoveRightState);
-                    try
-                    {
-                        tm.MoveRight(tv.GetNowBlock(), tv.GetAllBlocks());
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.GetType()+": Move right");
-                    }
-                    tm.setState(tm.IdleState);
-                }
-                else if (userInput == RotateCommand)
-                {
-                    tm.setState(tm.RotateState);
-                    try
-                    {
-                        tm.Rotate(tv.GetNowBlock(), tv.GetAllBlocks());
-                    }
-                    catch(Exception e)
-                    {
-                        Console.WriteLine(e.GetType()+": Rotate");
-                    }
-                    tm.setState(tm.IdleState);
-                }
-                else if (userInput == MoveDownFastCommand)
-                {
-                    tm.setState(tm.MoveDownFastState);
-                    try
-                    {
-                        tm.DropDownFast(tv.GetNowBlock(), tv.GetAllBlocks());
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.GetType()+": Dropdown fast");
-                    }
-                    tm.RemoveLine(tv.GetAllBlocks());
-                    tm.setState(tm.IdleState);
-                }
-                else if (userInput == MoveDownSlowCommand)
-                {
-                    tm.setState(tm.MoveDownSlowState);
-                    try
-                    {
-                        tm.DropDownSlow(tv.GetNowBlock(), tv.GetAllBlocks());
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.GetType()+": Dropdown slow");
-                    }
-                    tm.RemoveLine(tv.GetAllBlocks());
-                    tm.setState(tm.IdleState);
-                }
-            }
+            
         }
         // let game start
         public void start()
