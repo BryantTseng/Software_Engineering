@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace FinalProject
 {
@@ -70,9 +71,29 @@ namespace FinalProject
         public void ChangeGameView()
         {
             //may made a tetrisView array, and random choose one to show
+            Random Number = new Random();
+            switch (Number.Next() % 2)
+            {
+                case 0:
+                    Application.Restart();
+                    Application.ExitThread();
+                    Thread.Sleep(9999);
+                    Application.Run(new B10415016_view());
+                    break;
+                case 1:
+                    Application.Restart();
+                    Application.ExitThread();
+                    Thread.Sleep(9999);
+                    Application.Run(new B10332036_view());
+                    break;
+                //case 2:
+                //case 3:
+                //case 4:
+            }
+
         }
-        // be inform the state is changed, then modify the model to new model
-        public void stateHasChanged(TetrisModel model)
+            // be inform the state is changed, then modify the model to new model
+            public void stateHasChanged(TetrisModel model)
         {
             tm = model;
         }
@@ -146,8 +167,10 @@ namespace FinalProject
         }
         // change color of every picturebox in matrix to background color
         private void ClearNextPanel() {
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 4; j++) {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
                     allCubesOnNext[i, j].BackColor = panel2.BackColor;
                 }
             }
@@ -280,7 +303,8 @@ namespace FinalProject
                     }
                 }
             }
-            else {
+            else
+            {
                 // if the game is over, then pause game
                 timer1.Enabled = false;
                 timer2.Enabled = false;
