@@ -66,6 +66,9 @@
     <Compile Include="B10415016_view.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="B10415038_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="B10415039_view.cs">
       <SubType>Form</SubType>
     </Compile>
