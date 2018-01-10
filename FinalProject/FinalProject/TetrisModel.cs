@@ -209,7 +209,13 @@ namespace FinalProject
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
                         //near the buttom
-                        if (nowBlockIndex[i].Gety() + 1 > 12 || (allBlocks[nowBlockIndex[i].Gety() + 1, nowBlockIndex[i].Getx()].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[nowBlockIndex[i].Gety() + 1, nowBlockIndex[i].Getx()])))
+                        int x = nowBlockIndex[i].Getx();
+                        int y = nowBlockIndex[i].Gety();
+                        if (y+1 > 12)
+                        {
+                            throw new Exception();
+                        }
+                        if ((allBlocks[y + 1,x].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y,x])))
                         {
                             nowBlock.SetNowState(States.Stop);
                             tv.SetNowBlock(null);
@@ -249,11 +255,12 @@ namespace FinalProject
         {
             if (nowBlock != null)
             {
-                if (nowBlock.GetNowState() != States.Stop)
+                while (true)
                 {
-                    // move the block down until its state become stop
-                    while (nowBlock.GetNowState() != States.Stop) {
-                        DropDownSlow(nowBlock, allBlocks);
+                    try { DropDownSlow(nowBlock, allBlocks); }
+                    catch (Exception e)
+                    {
+                        break;
                     }
                 }
             }
