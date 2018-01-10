@@ -29,12 +29,13 @@ namespace FinalProject
         //reutrn now state
         public string getState()
         {
-
+            return nowState;
         }
         //set the now state to the argument, and inform controller state changed
         public void setState(string newState)
         {
-
+            nowState = newState;
+            tv.stateHasChanged(this);
         }
         // rotate the block
         public void Rotate(Blocks nowBlock, PictureBox[,] allBlocks)
@@ -42,6 +43,7 @@ namespace FinalProject
             if (nowBlock != null && nowBlock.GetBlocksType() != "O")
             {
                 Point center = ConvertIndexToPoint(nowBlock.GetCenter().Name);
+                PictureBox[,] AllBlocks = tv.GetAllBlocks();
                 Point[] AllBlocksIndex = nowBlock.GetAllCubesPosition();
                 PictureBox[] AllBlocksPosition = nowBlock.GetAllCubes();
                 System.Drawing.Color nowColor = AllBlocksPosition[0].BackColor;
@@ -55,6 +57,10 @@ namespace FinalProject
                         // if result calculated is out of range then throw exception
                         if (center.Getx() - x < 0 || center.Getx() - x > 8 || center.Gety() + y < 0 || center.Gety() + y > 12)
                         {
+                            throw new Exception();
+                        }
+                        // if result calculated is offensing other blocks then throw exception
+                        if (AllBlocks[center.Gety() + y, center.Getx() - x].BackColor != panelOnShow.BackColor && !AllBlocksPosition.Contains<PictureBox>(AllBlocks[center.Gety() + y, center.Getx() - x])) {
                             throw new Exception();
                         }
                     }
@@ -110,7 +116,8 @@ namespace FinalProject
                         }
                         int y = nowBlockIndex[i].Gety();
                         //avoid to touch the existed block
-                        if (allBlocks[y, x - 1].BackColor != panelOnShow.BackColor && allBlocks[y, x - 1].BackColor != allBlocks[y, x].BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x - 1]))
+                        //if (allBlocks[y, x - 1].BackColor != panelOnShow.BackColor && allBlocks[y, x - 1].BackColor != allBlocks[y, x].BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x - 1]))
+                        if (allBlocks[y, x - 1].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x - 1]))
                         {
                             throw new Exception();
                         }
@@ -160,7 +167,8 @@ namespace FinalProject
 
                         int y = nowBlockIndex[i].Gety();
                         // to avoid to touch the existed block
-                        if (allBlocks[y, x + 1].BackColor != panelOnShow.BackColor && allBlocks[y, x + 1].BackColor != allBlocks[y, x].BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x + 1]))
+                        //if (allBlocks[y, x + 1].BackColor != panelOnShow.BackColor && allBlocks[y, x + 1].BackColor != allBlocks[y, x].BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x + 1]))
+                        if (allBlocks[y, x + 1].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x + 1]))
                         {
                             throw new Exception();
                         }
@@ -191,23 +199,112 @@ namespace FinalProject
         // move the block down slow
         public void DropDownSlow(Blocks nowBlock, PictureBox[,] allBlocks)
         {
-            
+            if (nowBlock != null)
+            {
+                Point[] nowBlockIndex = nowBlock.GetAllCubesPosition();
+                PictureBox[] nowBlockPosition = nowBlock.GetAllCubes();
+                System.Drawing.Color nowColor = nowBlockPosition[0].BackColor;
+                Panel panelOnShow = tv.GetPanel1();
+                if (nowBlock.GetNowState() != States.Stop)
+                {
+                    for (int i = 0; i < nowBlockIndex.Length; i++)
+                    {
+                        //near the buttom
+                        if (nowBlockIndex[i].Gety() + 1 > 12 || (allBlocks[nowBlockIndex[i].Gety() + 1, nowBlockIndex[i].Getx()].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[nowBlockIndex[i].Gety() + 1, nowBlockIndex[i].Getx()])))
+                        {
+                            nowBlock.SetNowState(States.Stop);
+                            tv.SetNowBlock(null);
+                            throw new Exception();
+                        }
+                    }
+                    // change the color of cubes in block to background color
+                    // and calculate new index for every cubes
+                    for (int i = 0; i < nowBlockIndex.Length; i++)
+                    {
+                        nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        nowBlockIndex[i].Sety(nowBlockIndex[i].Gety() + 1);
+                    }
+                    // to avoid new index out of range
+                    for (int i = 0; i < nowBlockIndex.Length; i++)
+                    {
+                        if (nowBlockIndex[i].Gety() < 0 || nowBlockIndex[i].Gety() > 12 || nowBlockIndex[i].Getx() < 0 || nowBlockIndex[i].Getx() > 8)
+                        {
+                            throw new Exception();
+                        }
+                    }
+                    // change to new position, and modify the color to color of block
+                    for (int i = 0; i < nowBlockIndex.Length; i++)
+                    {
+                        nowBlockPosition[i] = allBlocks[nowBlockIndex[i].Gety(), nowBlockIndex[i].Getx()];
+                        nowBlockPosition[i].BackColor = nowColor;
+                    }
+                    // modify all info to every store unit
+                    nowBlock.SetAllCubesPosition(nowBlockIndex);
+                    nowBlock.SetAllCubes(nowBlockPosition);
+                    nowBlock.SetCenter(nowBlockPosition[1]);
+                }
+            }
         }
         // move the block down fast
         public void DropDownFast(Blocks nowBlock, PictureBox[,] allBlocks)
         {
-            
+            if (nowBlock != null)
+            {
+                if (nowBlock.GetNowState() != States.Stop)
+                {
+                    // move the block down until its state become stop
+                    while (nowBlock.GetNowState() != States.Stop) {
+                        DropDownSlow(nowBlock, allBlocks);
+                    }
+                }
+            }
         }
         // remove the row full of color, and made the another row up this row move down
         public void RemoveLine(PictureBox[,] allBlocks)
         {
-            
+            Panel panelOnShow = tv.GetPanel1();
+            System.Drawing.Color backcolor = panelOnShow.BackColor;
+            for(int i = 12; i >=0; i--)//from bottum to top
+            {
+                if (allBlocks[i, 0].BackColor != backcolor)//if the first cube of the row is filled
+                {
+                    for (int j = 1; j < 9; j++)//check rest of the cube in the row whether or not thy are filled
+                    {
+                        if (allBlocks[i, j].BackColor == backcolor)
+                        {
+                            break;//not filled, check next row
+                        }
+                        if (j == 8)//this row is all filled, start to move all the cube above this row downward
+                        {
+                            for(int k = i; k >= 0; k--)//from the row that is filled to the top
+                            { 
+                                for(int l = 0; l < 9; l++)
+                                {
+                                    if (k == 0)//the top row, fill all the cube with panel backcolor
+                                    {
+                                        allBlocks[k, l].BackColor = backcolor;
+                                    }
+                                    else//rest of the cube takes the backcolor of the cube above itself
+                                    {
+                                        allBlocks[k, l].BackColor = allBlocks[k - 1, l].BackColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
         // determine whether the game is over or not
         public bool GameOver()
         {
             // if game is over, then return true, whereas return false
-            
+            if (tv.finish()) {
+                tv.GetLabel1().Text = "GameOver";
+                return true;
+            }
+            return false;
         }
         // set shape of block
         public Blocks SetShape(PictureBox[] CubesNeeded, string type)
@@ -219,8 +316,7 @@ namespace FinalProject
             if (type == "T")
             {
                 cubes = setContentByGiven(CubesNeeded, 0, 1, 2, 4, ref index);
-                if (!TestCubesEmpty(cubes))
-                {
+                if (!TestCubesEmpty(cubes)) {
                     tv.SetFinish(true);
                     return null;
                 }
@@ -334,10 +430,8 @@ namespace FinalProject
         // test all cubes is "empty"
         private bool TestCubesEmpty(PictureBox[] cubes) {
             Panel panelOnShow = tv.GetPanel1();
-            for (int i = 0; i < cubes.Length; i++)
-            {
-                if (cubes[i].BackColor != panelOnShow.BackColor)
-                {
+            for (int i = 0; i < cubes.Length; i++) {
+                if (cubes[i].BackColor != panelOnShow.BackColor) {
                     return false;
                 }
             }

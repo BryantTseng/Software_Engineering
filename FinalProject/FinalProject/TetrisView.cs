@@ -74,7 +74,7 @@ namespace FinalProject
         // be inform the state is changed, then modify the model to new model
         public void stateHasChanged(TetrisModel model)
         {
-
+            tm = model;
         }
         // inform whether game is finished
         public bool finish()
@@ -146,10 +146,8 @@ namespace FinalProject
         }
         // change color of every picturebox in matrix to background color
         private void ClearNextPanel() {
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
                     allCubesOnNext[i, j].BackColor = panel2.BackColor;
                 }
             }
@@ -282,8 +280,7 @@ namespace FinalProject
                     }
                 }
             }
-            else
-            {
+            else {
                 // if the game is over, then pause game
                 timer1.Enabled = false;
                 timer2.Enabled = false;
