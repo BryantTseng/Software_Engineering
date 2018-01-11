@@ -59,7 +59,7 @@ namespace FinalProject
                             throw new Exception();
                         }
                         // if result calculated is offensing other blocks then throw exception
-                        if (AllBlocks[center.Gety() + y, center.Getx() - x].BackColor != panelOnShow.BackColor && !AllBlocksPosition.Contains<PictureBox>(AllBlocks[center.Gety() + y, center.Getx() - x])) {
+                        if (AllBlocks[center.Gety() + y, center.Getx() - x].BackColor != System.Drawing.Color.Transparent && !AllBlocksPosition.Contains<PictureBox>(AllBlocks[center.Gety() + y, center.Getx() - x])) {
                             throw new Exception();
                         }
                     }
@@ -71,7 +71,7 @@ namespace FinalProject
                         AllBlocksIndex[i].Setx(center.Getx() - x);
                         AllBlocksIndex[i].Sety(center.Gety() + y);
                         //AllBlocksPosition[i].BackColor = panelOnShow.BackColor;
-                        AllBlocksPosition[i].BackColor = System.Drawing.Color.Empty;
+                        AllBlocksPosition[i].BackColor = System.Drawing.Color.Transparent;
                     }
                     // store new index of cubes in picturebox metrix
                     nowBlock.SetAllCubesPosition(AllBlocksIndex);
@@ -117,7 +117,7 @@ namespace FinalProject
                         int y = nowBlockIndex[i].Gety();
                         //avoid to touch the existed block
                         //if (allBlocks[y, x - 1].BackColor != panelOnShow.BackColor && allBlocks[y, x - 1].BackColor != allBlocks[y, x].BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x - 1]))
-                        if (allBlocks[y, x - 1].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x - 1]))
+                        if (allBlocks[y, x - 1].BackColor != System.Drawing.Color.Transparent && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x - 1]))
                         {
                             throw new Exception();
                         }
@@ -127,7 +127,7 @@ namespace FinalProject
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
                         //nowBlockPosition[i].BackColor = panelOnShow.BackColor;
-                        nowBlockPosition[i].BackColor = System.Drawing.Color.Empty;
+                        nowBlockPosition[i].BackColor = System.Drawing.Color.Transparent;
                         nowBlockIndex[i].Setx(nowBlockIndex[i].Getx() - 1);
                     }
                     //modify position of block
@@ -169,7 +169,7 @@ namespace FinalProject
                         int y = nowBlockIndex[i].Gety();
                         // to avoid to touch the existed block
                         //if (allBlocks[y, x + 1].BackColor != panelOnShow.BackColor && allBlocks[y, x + 1].BackColor != allBlocks[y, x].BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x + 1]))
-                        if (allBlocks[y, x + 1].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x + 1]))
+                        if (allBlocks[y, x + 1].BackColor != System.Drawing.Color.Transparent && !nowBlockPosition.Contains<PictureBox>(allBlocks[y, x + 1]))
                         {
                             throw new Exception();
                         }
@@ -179,7 +179,7 @@ namespace FinalProject
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
                         //nowBlockPosition[i].BackColor = panelOnShow.BackColor;
-                        nowBlockPosition[i].BackColor = System.Drawing.Color.Empty;
+                        nowBlockPosition[i].BackColor = System.Drawing.Color.Transparent;
                         nowBlockIndex[i].Setx(nowBlockIndex[i].Getx() + 1);
                     }
                     //modify position of block
@@ -206,6 +206,7 @@ namespace FinalProject
                 Point[] nowBlockIndex = nowBlock.GetAllCubesPosition();
                 PictureBox[] nowBlockPosition = nowBlock.GetAllCubes();
                 System.Drawing.Color nowColor = nowBlockPosition[0].BackColor;
+                System.Console.WriteLine(nowBlockPosition[0].BackColor.Name);
                 Panel panelOnShow = tv.GetPanel1();
                 if (nowBlock.GetNowState() != States.Stop)
                 {
@@ -214,7 +215,7 @@ namespace FinalProject
                         //near the buttom
                         int x = nowBlockIndex[i].Getx();
                         int y = nowBlockIndex[i].Gety();
-                        if (y+1>12||(allBlocks[y + 1, x].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y+1, x])))
+                        if (y+1>12||(allBlocks[y + 1, x].BackColor != System.Drawing.Color.Transparent && !nowBlockPosition.Contains<PictureBox>(allBlocks[y+1, x])))
                         {
                             nowBlock.SetNowState(States.Stop);
                             tv.SetNowBlock(null);
@@ -233,9 +234,10 @@ namespace FinalProject
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
                         //nowBlockPosition[i].BackColor = panelOnShow.BackColor;
-                        nowBlockPosition[i].BackColor = System.Drawing.Color.Empty;
+                        nowBlockPosition[i].BackColor = System.Drawing.Color.Transparent;
                         nowBlockIndex[i].Sety(nowBlockIndex[i].Gety() + 1);
                     }
+                    System.Console.WriteLine(nowBlockPosition[0].BackColor.Name);
                     // to avoid new index out of range
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
@@ -250,6 +252,7 @@ namespace FinalProject
                         nowBlockPosition[i] = allBlocks[nowBlockIndex[i].Gety(), nowBlockIndex[i].Getx()];
                         nowBlockPosition[i].BackColor = nowColor;
                     }
+                    System.Console.WriteLine(nowBlockPosition[0].BackColor.Name);
                     // modify all info to every store unit
                     nowBlock.SetAllCubesPosition(nowBlockIndex);
                     nowBlock.SetAllCubes(nowBlockPosition);
@@ -283,11 +286,11 @@ namespace FinalProject
             System.Drawing.Color backcolor = panelOnShow.BackColor;
             for(int i = 12; i >=0; i--)//from bottum to top
             {
-                if (allBlocks[i, 0].BackColor != backcolor)//if the first cube of the row is filled
+                if (allBlocks[i, 0].BackColor != System.Drawing.Color.Transparent)//if the first cube of the row is filled
                 {
                     for (int j = 1; j < 9; j++)//check rest of the cube in the row whether or not thy are filled
                     {
-                        if (allBlocks[i, j].BackColor == backcolor)
+                        if (allBlocks[i, j].BackColor == System.Drawing.Color.Transparent)
                         {
                             break;//not filled, check next row
                         }
@@ -300,7 +303,7 @@ namespace FinalProject
                                 {
                                     if (k == 0)//the top row, fill all the cube with panel backcolor
                                     {
-                                        allBlocks[k, l].BackColor = backcolor;
+                                        allBlocks[k, l].BackColor = System.Drawing.Color.Transparent;
                                     }
                                     else//rest of the cube takes the backcolor of the cube above itself
                                     {
@@ -450,7 +453,8 @@ namespace FinalProject
         private bool TestCubesEmpty(PictureBox[] cubes) {
             Panel panelOnShow = tv.GetPanel1();
             for (int i = 0; i < cubes.Length; i++) {
-                if (cubes[i].BackColor != panelOnShow.BackColor) {
+                if (cubes[i].BackColor != System.Drawing.Color.Transparent) {
+                //if (cubes[i].BackColor != panelOnShow.BackColor){
                     return false;
                 }
             }

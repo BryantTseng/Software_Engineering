@@ -16,7 +16,7 @@ namespace FinalProject
         public String MoveDownFastCommand = "down_f";
         public String MoveDownSlowCommand = "down_s";
         public String RotateCommand = "rotate";
-
+        
         public TetrisController(TetrisView tv)
         {
             this.tv = tv;
