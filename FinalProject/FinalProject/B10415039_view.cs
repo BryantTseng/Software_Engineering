@@ -94,7 +94,7 @@ namespace FinalProject
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(12, 186);
-            this.label1.Text = "GameOver";
+            this.label1.Text = "時間: 0s";
             // 
             // panel1
             // 

@@ -77,7 +77,7 @@ namespace FinalProject
         {
             //may made a tetrisView array, and random choose one to show
 
-            if (nowskin == 0)
+            if (nowskin == 1)
             {
                 //set view to B10415038 & set nowskin to 1
                 this.SuspendLayout();
@@ -120,7 +120,7 @@ namespace FinalProject
 
                 nowskin = 1;
             }
-            else if (nowskin == 1)
+            else if (nowskin == 0)
             {
                 //set view to B10415039 & set nowskin to 2
                 this.SuspendLayout();
@@ -128,7 +128,7 @@ namespace FinalProject
                 // label1
                 // 
                 this.label1.Location = new System.Drawing.Point(12, 186);
-                this.label1.Text = "GameOver";
+                //this.label1.Text = "時間:0s";
                 // 
                 // panel1
                 // 
@@ -198,7 +198,6 @@ namespace FinalProject
                 this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
                 this.label1.Location = new System.Drawing.Point(7, 175);
                 this.label1.Size = new System.Drawing.Size(165, 37);
-                this.label1.Text = "GameOver";
                 // 
                 // panel1
                 // 
