@@ -89,39 +89,57 @@ namespace FinalProject
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(370, 180);
+            // 
             // panel1
+            // 
             this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Location = new System.Drawing.Point(5, 5);
-            
+            // 
             // panel2
+            // 
             this.panel2.BackColor = System.Drawing.Color.Blue;
-            this.panel2.Location = new System.Drawing.Point(370, 5);
-
-            //label1
-            this.label1.Location = new System.Drawing.Point(370,180);
-            label1.ForeColor = Color.Red;
-
-            //label2
+            // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.Color.Green;
             this.label2.Location = new System.Drawing.Point(370, 220);
-            label2.ForeColor = Color.Green;
-
-            //button1
+            // 
+            // button1
+            // 
             this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.Location = new System.Drawing.Point(370,280);
-
-            //button2
+            this.button1.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button1.Location = new System.Drawing.Point(370, 280);
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
             this.button2.BackColor = System.Drawing.Color.Gold;
+            this.button2.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button2.Location = new System.Drawing.Point(370, 340);
-
-            //button3
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
             this.button3.BackColor = System.Drawing.Color.Gold;
+            this.button3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button3.Location = new System.Drawing.Point(370, 400);
-
-            //button4
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
             this.button4.BackColor = System.Drawing.Color.Gold;
+            this.button4.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button4.Location = new System.Drawing.Point(370, 460);
-
+            this.button4.Size = new System.Drawing.Size(160, 65);
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // B10332036_view
             // 
@@ -130,8 +148,16 @@ namespace FinalProject
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(535, 530);
             this.Name = "B10332036_view";
-            
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
+            this.Controls.SetChildIndex(this.button3, 0);
+            this.Controls.SetChildIndex(this.button4, 0);
             this.ResumeLayout(false);
+
         }
     }
 }

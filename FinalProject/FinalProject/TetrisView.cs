@@ -18,7 +18,7 @@ namespace FinalProject
         private bool finish_flag;
         private Blocks nowBlock, nextBlock;
         protected int nowTime = 0;
-        private int nowskin = 0;//0 = 16, 1 = 38, 2 = 39, 3 = 40, 4 = 36
+        private int nowskin = 2;//0 = 16, 1 = 38, 2 = 39, 3 = 40, 4 = 36
         PictureBox[] initialCubesOnShow, initialCubesOnNext;
         private String[] Type = { "T", "Z", "l", "Lightning", "L", "J", "O" };
         
@@ -81,8 +81,12 @@ namespace FinalProject
             {
                 //set view to B10415038 & set nowskin to 1
                 this.SuspendLayout();
-                this.panel1.SuspendLayout();
-                this.panel2.SuspendLayout();
+                // 
+                // label1
+                // 
+                this.label1.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+                this.label1.Location = new System.Drawing.Point(1, 650);
+                this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
                 // 
                 // panel1
                 // 
@@ -92,33 +96,66 @@ namespace FinalProject
                 // 
                 this.panel2.BackColor = System.Drawing.Color.BlanchedAlmond;
                 // 
+                // label2
+                // 
+                this.label2.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+                this.label2.Location = new System.Drawing.Point(510, 650);
+                this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
+                // 
+                // button1
+                // 
+                this.button1.BackColor = System.Drawing.Color.Cyan;
+                this.button1.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
+                this.button1.Location = new System.Drawing.Point(1, 550);
+                this.button1.UseVisualStyleBackColor = false;
+                // 
+                // button2
+                // 
+                this.button2.BackColor = System.Drawing.Color.Cyan;
+                this.button2.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
+                this.button2.Location = new System.Drawing.Point(170, 550);
+                this.button2.UseVisualStyleBackColor = false;
+                // 
+                // button3
+                // 
+                this.button3.BackColor = System.Drawing.Color.Cyan;
+                this.button3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
+                this.button3.Location = new System.Drawing.Point(340, 550);
+                this.button3.UseVisualStyleBackColor = false;
+                // 
                 // timer1
                 // 
-                this.button1.Location = new System.Drawing.Point(1, 550);
-                this.button2.Location = new System.Drawing.Point(170, 550);
-                this.button3.Location = new System.Drawing.Point(340, 550);
-                this.button4.Location = new System.Drawing.Point(510, 550);
-                this.label1.Location = new System.Drawing.Point(1, 650);
-                this.label2.Location = new System.Drawing.Point(510, 650);
-                this.button1.BackColor = Color.Cyan;
-                this.button2.BackColor = Color.Cyan;
-                this.button3.BackColor = Color.Cyan;
-                this.button4.BackColor = Color.Cyan;
-
                 this.timer1.Enabled = true;
                 // 
-                // B10415016_view
+                // button4
+                // 
+                this.button4.BackColor = System.Drawing.Color.Cyan;
+                this.button4.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
+                this.button4.Location = new System.Drawing.Point(510, 550);
+                this.button4.UseVisualStyleBackColor = false;
+                // 
+                // B10415038_view
                 // 
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
                 this.ClientSize = new System.Drawing.Size(700, 700);
-                this.Name = "B10415016_view";
-                this.Text = "Tetris";
+                this.Name = "B10415038_view";
+                this.Controls.SetChildIndex(this.panel1, 0);
+                this.Controls.SetChildIndex(this.panel2, 0);
+                this.Controls.SetChildIndex(this.label1, 0);
+                this.Controls.SetChildIndex(this.label2, 0);
+                this.Controls.SetChildIndex(this.button1, 0);
+                this.Controls.SetChildIndex(this.button2, 0);
+                this.Controls.SetChildIndex(this.button3, 0);
+                this.Controls.SetChildIndex(this.button4, 0);
                 this.ResumeLayout(false);
-                this.panel1.ResumeLayout(false);
-                this.panel2.ResumeLayout(false);
 
-                nowskin = 1;
+                nowskin = 0;
             }
             else if (nowskin == 0)
             {
@@ -127,8 +164,9 @@ namespace FinalProject
                 // 
                 // label1
                 // 
+                this.label1.Font = new System.Drawing.Font("微軟正黑體 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+                this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
                 this.label1.Location = new System.Drawing.Point(12, 186);
-                //this.label1.Text = "時間:0s";
                 // 
                 // panel1
                 // 
@@ -142,30 +180,41 @@ namespace FinalProject
                 // 
                 // label2
                 // 
+                this.label2.Font = new System.Drawing.Font("微軟正黑體 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+                this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
                 this.label2.Location = new System.Drawing.Point(7, 236);
                 // 
                 // button1
                 // 
                 this.button1.BackColor = System.Drawing.Color.IndianRed;
+                this.button1.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.button1.Location = new System.Drawing.Point(12, 288);
+                this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
                 this.button1.UseVisualStyleBackColor = false;
                 // 
                 // button2
                 // 
                 this.button2.BackColor = System.Drawing.Color.IndianRed;
+                this.button2.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.button2.Location = new System.Drawing.Point(12, 349);
+                this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
                 this.button2.UseVisualStyleBackColor = false;
                 // 
                 // button3
                 // 
                 this.button3.BackColor = System.Drawing.Color.IndianRed;
+                this.button3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.button3.Location = new System.Drawing.Point(12, 410);
+                this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
                 this.button3.UseVisualStyleBackColor = false;
                 // 
                 // button4
                 // 
                 this.button4.BackColor = System.Drawing.Color.IndianRed;
+                this.button4.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.button4.Location = new System.Drawing.Point(12, 471);
+                this.button4.Size = new System.Drawing.Size(160, 61);
+                this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
                 this.button4.UseVisualStyleBackColor = false;
                 // 
                 // B10415039_view
@@ -293,18 +342,27 @@ namespace FinalProject
                 //button1
                 this.button1.BackColor = System.Drawing.Color.Gold;
                 this.button1.Location = new System.Drawing.Point(370, 280);
+                this.button1.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
 
                 //button2
                 this.button2.BackColor = System.Drawing.Color.Gold;
                 this.button2.Location = new System.Drawing.Point(370, 340);
+                this.button2.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
 
                 //button3
                 this.button3.BackColor = System.Drawing.Color.Gold;
                 this.button3.Location = new System.Drawing.Point(370, 400);
+                this.button3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
 
                 //button4
                 this.button4.BackColor = System.Drawing.Color.Gold;
                 this.button4.Location = new System.Drawing.Point(370, 460);
+                this.button4.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
+                this.button4.Size = new System.Drawing.Size(160, 65);
 
                 // 
                 // B10332036_view
@@ -312,7 +370,7 @@ namespace FinalProject
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                 this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-                this.ClientSize = new System.Drawing.Size(550, 600);
+                this.ClientSize = new System.Drawing.Size(535, 530);
                 this.Name = "B10332036_view";
 
                 this.ResumeLayout(false);
@@ -323,8 +381,11 @@ namespace FinalProject
             {
                 //set view to B10415016 & set nowskin to 0
                 this.SuspendLayout();
-                this.panel1.SuspendLayout();
-                this.panel2.SuspendLayout();
+                // 
+                // label1
+                // 
+                this.label1.Font = new System.Drawing.Font("微軟正黑體", 16F);
+                this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
                 // 
                 // panel1
                 // 
@@ -334,23 +395,59 @@ namespace FinalProject
                 // 
                 this.panel2.BackColor = System.Drawing.Color.BlanchedAlmond;
                 // 
+                // label2
+                // 
+                this.label2.Font = new System.Drawing.Font("微軟正黑體", 16F);
+                this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+                // 
+                // button1
+                // 
+                this.button1.BackColor = System.Drawing.SystemColors.Control;
+                this.button1.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button1.UseVisualStyleBackColor = false;
+                // 
+                // button2
+                // 
+                this.button2.BackColor = System.Drawing.SystemColors.Control;
+                this.button2.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button2.UseVisualStyleBackColor = false;
+                // 
+                // button3
+                // 
+                this.button3.BackColor = System.Drawing.SystemColors.Control;
+                this.button3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button3.UseVisualStyleBackColor = false;
+                // 
                 // timer1
                 // 
                 this.timer1.Enabled = true;
+                // 
+                // button4
+                // 
+                this.button4.BackColor = System.Drawing.SystemColors.Control;
+                this.button4.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button4.Location = new System.Drawing.Point(370, 462);
+                this.button4.Size = new System.Drawing.Size(160, 63);
+                this.button4.UseVisualStyleBackColor = false;
                 // 
                 // B10415016_view
                 // 
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.BackColor = System.Drawing.SystemColors.Control;
                 this.ClientSize = new System.Drawing.Size(535, 530);
                 this.Name = "B10415016_view";
-                this.Text = "Tetris";
-
+                this.Controls.SetChildIndex(this.panel1, 0);
+                this.Controls.SetChildIndex(this.panel2, 0);
+                this.Controls.SetChildIndex(this.label1, 0);
+                this.Controls.SetChildIndex(this.label2, 0);
+                this.Controls.SetChildIndex(this.button1, 0);
+                this.Controls.SetChildIndex(this.button2, 0);
+                this.Controls.SetChildIndex(this.button3, 0);
+                this.Controls.SetChildIndex(this.button4, 0);
                 this.ResumeLayout(false);
-                this.panel1.ResumeLayout(false);
-                this.panel2.ResumeLayout(false);
 
-                nowskin = 0;
+                nowskin = 1;
             }
 
         }

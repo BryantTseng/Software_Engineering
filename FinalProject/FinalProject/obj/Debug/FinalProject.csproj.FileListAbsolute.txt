@@ -64,3 +64,4 @@ C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\F
 C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 D:\github\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.B10415040_view.resources
+C:\Users\Bryant\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.B10415038_view.resources

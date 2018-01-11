@@ -100,6 +100,9 @@
     <EmbeddedResource Include="B10415016_view.resx">
       <DependentUpon>B10415016_view.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="B10415038_view.resx">
+      <DependentUpon>B10415038_view.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="B10415040_view.resx">
       <DependentUpon>B10415040_view.cs</DependentUpon>
     </EmbeddedResource>
