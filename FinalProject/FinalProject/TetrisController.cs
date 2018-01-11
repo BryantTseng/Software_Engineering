@@ -16,7 +16,7 @@ namespace FinalProject
         public String MoveDownFastCommand = "down_f";
         public String MoveDownSlowCommand = "down_s";
         public String RotateCommand = "rotate";
-
+        
         public TetrisController(TetrisView tv)
         {
             this.tv = tv;
@@ -79,7 +79,10 @@ namespace FinalProject
                     {
                         Console.WriteLine(e.GetType()+": Dropdown fast");
                     }
-                    tm.RemoveLine(tv.GetAllBlocks());
+                    //if (tv.GetNowBlock().GetNowState() == States.Stop)
+                    //{
+                    //    tm.RemoveLine(tv.GetAllBlocks());
+                    //}
                     tm.setState(tm.IdleState);
                 }
                 else if (userInput == MoveDownSlowCommand)
@@ -93,7 +96,7 @@ namespace FinalProject
                     {
                         Console.WriteLine(e.GetType()+": Dropdown slow");
                     }
-                    tm.RemoveLine(tv.GetAllBlocks());
+                    
                     tm.setState(tm.IdleState);
                 }
             }

@@ -26,7 +26,9 @@ namespace FinalProject
         public TetrisView()
         {
             InitializeComponent();
+            //System.Console.WriteLine(allCubesOnShow[0, 0].BackColor.Name.ToString());
             ViewSetting();
+            System.Console.WriteLine(allCubesOnShow[0, 0].BackColor.Name.ToString());
             this.tm = new TetrisModel(this);
             this.tc = new TetrisController(this);
             finish_flag = false;
@@ -34,8 +36,10 @@ namespace FinalProject
             nextBlock = null;
             initialCubesOnShow = new System.Windows.Forms.PictureBox[12];
             initialCubesOnShow = GetWantedBlockOnShow();
+            System.Console.WriteLine(allCubesOnShow[0, 0].BackColor.Name.ToString());
             initialCubesOnNext = new System.Windows.Forms.PictureBox[12];
             initialCubesOnNext = GetWantedBlockOnNext();
+            System.Console.WriteLine(allCubesOnShow[0, 0].BackColor.Name.ToString());
             tc.start();
         }
 
@@ -273,7 +277,7 @@ namespace FinalProject
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    allCubesOnNext[i, j].BackColor = panel2.BackColor;
+                    allCubesOnNext[i, j].BackColor = Color.Transparent;
                 }
             }
         }

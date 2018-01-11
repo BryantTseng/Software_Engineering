@@ -27,8 +27,8 @@ namespace FinalProject
                 for (int j = 0; j < 9; j++)
                 {
                     allCubesOnShow[i, j] = new System.Windows.Forms.PictureBox();
-                    allCubesOnShow[i, j].Name = "pictureBox" + i.ToString() + j.ToString();
-                    allCubesOnShow[i, j].BackColor = Color.Empty;
+                    allCubesOnShow[i, j].Name = "pictureBox" + "0" + i.ToString() + j.ToString();
+                    allCubesOnShow[i, j].BackColor = Color.Transparent;
                     allCubesOnShow[i, j].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     allCubesOnShow[i, j].Location = new System.Drawing.Point(j * 40, i * 40);
                     allCubesOnShow[i, j].Size = new System.Drawing.Size(40, 40);
@@ -52,7 +52,8 @@ namespace FinalProject
                 for (int j = 0; j < 4; j++)
                 {
                     allCubesOnNext[i, j] = new System.Windows.Forms.PictureBox();
-                    allCubesOnNext[i, j].Name = "pictureBox" + i.ToString() + j.ToString();
+                    allCubesOnNext[i, j].Name = "pictureBox" + "1" + i.ToString() + j.ToString();
+                    allCubesOnNext[i, j].BackColor = Color.Transparent;
                     allCubesOnNext[i, j].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     allCubesOnNext[i, j].Location = new System.Drawing.Point(j * 40, i * 40);
                     allCubesOnNext[i, j].Size = new System.Drawing.Size(40, 40);
