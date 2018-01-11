@@ -18,6 +18,7 @@ namespace FinalProject
         private bool finish_flag;
         private Blocks nowBlock, nextBlock;
         protected int nowTime = 0;
+        private int nowskin = 0;//0 = 16, 1 = 38, 2 = 39, 3 = 40, 4 = 36
         PictureBox[] initialCubesOnShow, initialCubesOnNext;
         private String[] Type = { "T", "Z", "l", "Lightning", "L", "J", "O" };
         
@@ -170,11 +171,11 @@ namespace FinalProject
 
                     //button3
                     this.button3.BackColor = System.Drawing.Color.Gold;
-                    this.button3.Location = new System.Drawing.Point(370, 350);
+                    this.button3.Location = new System.Drawing.Point(370, 400);
 
                     //button4
-                    this.button3.BackColor = System.Drawing.Color.Gold;
-                    this.button3.Location = new System.Drawing.Point(370, 400);
+                    this.button4.BackColor = System.Drawing.Color.Gold;
+                    this.button4.Location = new System.Drawing.Point(370, 460);
 
                     // 
                     // B10332036_view
@@ -193,8 +194,8 @@ namespace FinalProject
             }
 
         }
-            // be inform the state is changed, then modify the model to new model
-            public void stateHasChanged(TetrisModel model)
+        // be inform the state is changed, then modify the model to new model
+        public void stateHasChanged(TetrisModel model)
         {
             tm = model;
         }

@@ -116,11 +116,11 @@ namespace FinalProject
 
             //button3
             this.button3.BackColor = System.Drawing.Color.Gold;
-            this.button3.Location = new System.Drawing.Point(370, 350);
+            this.button3.Location = new System.Drawing.Point(370, 400);
 
             //button4
-            this.button3.BackColor = System.Drawing.Color.Gold;
-            this.button3.Location = new System.Drawing.Point(370, 400);
+            this.button4.BackColor = System.Drawing.Color.Gold;
+            this.button4.Location = new System.Drawing.Point(370, 460);
 
             // 
             // B10332036_view
