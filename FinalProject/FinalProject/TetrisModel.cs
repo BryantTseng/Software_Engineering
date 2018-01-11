@@ -70,7 +70,8 @@ namespace FinalProject
                         int y = AllBlocksIndex[i].Getx() - center.Getx();
                         AllBlocksIndex[i].Setx(center.Getx() - x);
                         AllBlocksIndex[i].Sety(center.Gety() + y);
-                        AllBlocksPosition[i].BackColor = panelOnShow.BackColor;
+                        //AllBlocksPosition[i].BackColor = panelOnShow.BackColor;
+                        AllBlocksPosition[i].BackColor = System.Drawing.Color.Empty;
                     }
                     // store new index of cubes in picturebox metrix
                     nowBlock.SetAllCubesPosition(AllBlocksIndex);
@@ -125,7 +126,8 @@ namespace FinalProject
                     //compute the new position of block
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
-                        nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        //nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        nowBlockPosition[i].BackColor = System.Drawing.Color.Empty;
                         nowBlockIndex[i].Setx(nowBlockIndex[i].Getx() - 1);
                     }
                     //modify position of block
@@ -176,7 +178,8 @@ namespace FinalProject
                     //compute the new position of block
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
-                        nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        //nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        nowBlockPosition[i].BackColor = System.Drawing.Color.Empty;
                         nowBlockIndex[i].Setx(nowBlockIndex[i].Getx() + 1);
                     }
                     //modify position of block
@@ -229,7 +232,8 @@ namespace FinalProject
                     // and calculate new index for every cubes
                     for (int i = 0; i < nowBlockIndex.Length; i++)
                     {
-                        nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        //nowBlockPosition[i].BackColor = panelOnShow.BackColor;
+                        nowBlockPosition[i].BackColor = System.Drawing.Color.Empty;
                         nowBlockIndex[i].Sety(nowBlockIndex[i].Gety() + 1);
                     }
                     // to avoid new index out of range
