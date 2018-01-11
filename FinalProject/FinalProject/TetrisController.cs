@@ -79,10 +79,10 @@ namespace FinalProject
                     {
                         Console.WriteLine(e.GetType()+": Dropdown fast");
                     }
-                    if (tv.GetNowBlock().GetNowState() == States.Stop)
-                    {
-                        tm.RemoveLine(tv.GetAllBlocks());
-                    }
+                    //if (tv.GetNowBlock().GetNowState() == States.Stop)
+                    //{
+                    //    tm.RemoveLine(tv.GetAllBlocks());
+                    //}
                     tm.setState(tm.IdleState);
                 }
                 else if (userInput == MoveDownSlowCommand)

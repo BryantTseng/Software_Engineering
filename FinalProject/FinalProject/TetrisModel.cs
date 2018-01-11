@@ -217,6 +217,7 @@ namespace FinalProject
                         if (y+1>12||(allBlocks[y + 1, x].BackColor != panelOnShow.BackColor && !nowBlockPosition.Contains<PictureBox>(allBlocks[y+1, x])))
                         {
                             nowBlock.SetNowState(States.Stop);
+                            RemoveLine(allBlocks);
                             tv.SetNowBlock(null);
                             throw new Exception();
                         }
@@ -255,6 +256,7 @@ namespace FinalProject
                     nowBlock.SetAllCubes(nowBlockPosition);
                     nowBlock.SetCenter(nowBlockPosition[1]);
                 }
+               
             }
         }
         // move the block down fast
