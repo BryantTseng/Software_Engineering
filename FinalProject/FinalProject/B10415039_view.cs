@@ -28,6 +28,7 @@ namespace FinalProject
                 {
                     allCubesOnShow[i, j] = new System.Windows.Forms.PictureBox();
                     allCubesOnShow[i, j].Name = "pictureBox" + i.ToString() + j.ToString();
+                    allCubesOnShow[i, j].BackColor = Color.Empty;
                     allCubesOnShow[i, j].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                     allCubesOnShow[i, j].Location = new System.Drawing.Point(j * 40, i * 40);
                     allCubesOnShow[i, j].Size = new System.Drawing.Size(40, 40);
