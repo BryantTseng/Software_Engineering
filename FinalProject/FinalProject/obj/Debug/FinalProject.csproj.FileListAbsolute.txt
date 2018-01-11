@@ -63,3 +63,4 @@ C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\F
 C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Mike\Desktop\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+D:\github\Software_Engineering\FinalProject\FinalProject\obj\Debug\FinalProject.B10415040_view.resources

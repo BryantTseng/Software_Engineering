@@ -77,124 +77,281 @@ namespace FinalProject
         {
             //may made a tetrisView array, and random choose one to show
 
-            Random Number = new Random();
-
-            switch (Number.Next() % 2)
+            if (nowskin == 0)
             {
-                //case 0 is B10415039_view
-                case 0:
-                    this.SuspendLayout();
-                    // 
-                    // label1
-                    // 
-                    this.label1.Location = new System.Drawing.Point(12, 186);
-                    // 
-                    // panel1
-                    // 
-                    this.panel1.BackColor = System.Drawing.Color.Black;
-                    this.panel1.Location = new System.Drawing.Point(183, 12);
-                    // 
-                    // panel2
-                    // 
-                    this.panel2.BackColor = System.Drawing.Color.Black;
-                    this.panel2.Location = new System.Drawing.Point(12, 12);
-                    // 
-                    // label2
-                    // 
-                    this.label2.Location = new System.Drawing.Point(7, 236);
-                    // 
-                    // button1
-                    // 
-                    this.button1.BackColor = System.Drawing.Color.IndianRed;
-                    this.button1.Location = new System.Drawing.Point(12, 288);
-                    this.button1.UseVisualStyleBackColor = false;
-                    // 
-                    // button2
-                    // 
-                    this.button2.BackColor = System.Drawing.Color.IndianRed;
-                    this.button2.Location = new System.Drawing.Point(12, 349);
-                    this.button2.UseVisualStyleBackColor = false;
-                    // 
-                    // button3
-                    // 
-                    this.button3.BackColor = System.Drawing.Color.IndianRed;
-                    this.button3.Location = new System.Drawing.Point(12, 410);
-                    this.button3.UseVisualStyleBackColor = false;
-                    // 
-                    // button4
-                    // 
-                    this.button4.BackColor = System.Drawing.Color.IndianRed;
-                    this.button4.Location = new System.Drawing.Point(12, 471);
-                    this.button4.UseVisualStyleBackColor = false;
-                    // 
-                    // B10415039_view
-                    // 
-                    this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-                    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-                    this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-                    this.ClientSize = new System.Drawing.Size(555, 547);
-                    this.Name = "B10415039_view";
-                    this.Controls.SetChildIndex(this.panel1, 0);
-                    this.Controls.SetChildIndex(this.panel2, 0);
-                    this.Controls.SetChildIndex(this.label1, 0);
-                    this.Controls.SetChildIndex(this.label2, 0);
-                    this.Controls.SetChildIndex(this.button1, 0);
-                    this.Controls.SetChildIndex(this.button2, 0);
-                    this.Controls.SetChildIndex(this.button3, 0);
-                    this.Controls.SetChildIndex(this.button4, 0);
-                    this.ResumeLayout(false);
-                    break;
+                //set view to B10415038 & set nowskin to 1
+                this.SuspendLayout();
+                this.panel1.SuspendLayout();
+                this.panel2.SuspendLayout();
+                // 
+                // panel1
+                // 
+                this.panel1.BackColor = System.Drawing.Color.BlanchedAlmond;
+                // 
+                // panel2
+                // 
+                this.panel2.BackColor = System.Drawing.Color.BlanchedAlmond;
+                // 
+                // timer1
+                // 
+                this.button1.Location = new System.Drawing.Point(1, 550);
+                this.button2.Location = new System.Drawing.Point(170, 550);
+                this.button3.Location = new System.Drawing.Point(340, 550);
+                this.button4.Location = new System.Drawing.Point(510, 550);
+                this.label1.Location = new System.Drawing.Point(1, 650);
+                this.label2.Location = new System.Drawing.Point(510, 650);
+                this.button1.BackColor = Color.Cyan;
+                this.button2.BackColor = Color.Cyan;
+                this.button3.BackColor = Color.Cyan;
+                this.button4.BackColor = Color.Cyan;
 
-                //case 0 is B10332036_view
-                case 1:
-                    this.SuspendLayout();
+                this.timer1.Enabled = true;
+                // 
+                // B10415016_view
+                // 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.ClientSize = new System.Drawing.Size(700, 700);
+                this.Name = "B10415016_view";
+                this.Text = "Tetris";
+                this.ResumeLayout(false);
+                this.panel1.ResumeLayout(false);
+                this.panel2.ResumeLayout(false);
 
-                    // panel1
-                    this.panel1.BackColor = System.Drawing.Color.Green;
-                    this.panel1.Location = new System.Drawing.Point(5, 5);
+                nowskin = 1;
+            }
+            else if (nowskin == 1)
+            {
+                //set view to B10415039 & set nowskin to 2
+                this.SuspendLayout();
+                // 
+                // label1
+                // 
+                this.label1.Location = new System.Drawing.Point(12, 186);
+                this.label1.Text = "GameOver";
+                // 
+                // panel1
+                // 
+                this.panel1.BackColor = System.Drawing.Color.Black;
+                this.panel1.Location = new System.Drawing.Point(183, 12);
+                // 
+                // panel2
+                // 
+                this.panel2.BackColor = System.Drawing.Color.Black;
+                this.panel2.Location = new System.Drawing.Point(12, 12);
+                // 
+                // label2
+                // 
+                this.label2.Location = new System.Drawing.Point(7, 236);
+                // 
+                // button1
+                // 
+                this.button1.BackColor = System.Drawing.Color.IndianRed;
+                this.button1.Location = new System.Drawing.Point(12, 288);
+                this.button1.UseVisualStyleBackColor = false;
+                // 
+                // button2
+                // 
+                this.button2.BackColor = System.Drawing.Color.IndianRed;
+                this.button2.Location = new System.Drawing.Point(12, 349);
+                this.button2.UseVisualStyleBackColor = false;
+                // 
+                // button3
+                // 
+                this.button3.BackColor = System.Drawing.Color.IndianRed;
+                this.button3.Location = new System.Drawing.Point(12, 410);
+                this.button3.UseVisualStyleBackColor = false;
+                // 
+                // button4
+                // 
+                this.button4.BackColor = System.Drawing.Color.IndianRed;
+                this.button4.Location = new System.Drawing.Point(12, 471);
+                this.button4.UseVisualStyleBackColor = false;
+                // 
+                // B10415039_view
+                // 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                this.ClientSize = new System.Drawing.Size(555, 547);
+                this.Name = "B10415039_view";
+                this.Controls.SetChildIndex(this.panel1, 0);
+                this.Controls.SetChildIndex(this.panel2, 0);
+                this.Controls.SetChildIndex(this.label1, 0);
+                this.Controls.SetChildIndex(this.label2, 0);
+                this.Controls.SetChildIndex(this.button1, 0);
+                this.Controls.SetChildIndex(this.button2, 0);
+                this.Controls.SetChildIndex(this.button3, 0);
+                this.Controls.SetChildIndex(this.button4, 0);
+                this.ResumeLayout(false);
 
-                    // panel2
-                    this.panel2.BackColor = System.Drawing.Color.Gold;
-                    this.panel2.Location = new System.Drawing.Point(370, 5);
+                nowskin = 2;
+            }
+            else if (nowskin == 2)
+            {
+                //set view to B10415040 & set nowskin to 3
+                this.SuspendLayout();
+                // 
+                // label1
+                // 
+                this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+                this.label1.Location = new System.Drawing.Point(7, 175);
+                this.label1.Size = new System.Drawing.Size(165, 37);
+                this.label1.Text = "GameOver";
+                // 
+                // panel1
+                // 
+                this.panel1.BackColor = System.Drawing.Color.Black;
+                this.panel1.Location = new System.Drawing.Point(183, 12);
+                // 
+                // panel2
+                // 
+                this.panel2.BackColor = System.Drawing.Color.Black;
+                this.panel2.Location = new System.Drawing.Point(12, 12);
+                // 
+                // label2
+                // 
+                this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+                this.label2.Location = new System.Drawing.Point(7, 212);
+                this.label2.Size = new System.Drawing.Size(165, 49);
+                // 
+                // button1
+                // 
+                this.button1.BackColor = System.Drawing.Color.Black;
+                this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button1.ForeColor = System.Drawing.Color.Yellow;
+                this.button1.Location = new System.Drawing.Point(12, 253);
+                this.button1.UseVisualStyleBackColor = false;
+                // 
+                // button2
+                // 
+                this.button2.BackColor = System.Drawing.Color.Black;
+                this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button2.ForeColor = System.Drawing.Color.Yellow;
+                this.button2.Location = new System.Drawing.Point(12, 314);
+                this.button2.UseVisualStyleBackColor = false;
+                // 
+                // button3
+                // 
+                this.button3.BackColor = System.Drawing.Color.Black;
+                this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button3.ForeColor = System.Drawing.Color.Yellow;
+                this.button3.Location = new System.Drawing.Point(12, 375);
+                this.button3.UseVisualStyleBackColor = false;
+                // 
+                // button4
+                // 
+                this.button4.BackColor = System.Drawing.Color.Black;
+                this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button4.ForeColor = System.Drawing.Color.Yellow;
+                this.button4.Location = new System.Drawing.Point(13, 436);
+                this.button4.Size = new System.Drawing.Size(160, 96);
+                this.button4.Text = "Change\r\nView";
+                this.button4.UseVisualStyleBackColor = false;
+                // 
+                // B10415040_view
+                // 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.BackColor = System.Drawing.Color.Yellow;
+                this.ClientSize = new System.Drawing.Size(555, 547);
+                this.Name = "B10415040_view";
+                this.Controls.SetChildIndex(this.panel1, 0);
+                this.Controls.SetChildIndex(this.panel2, 0);
+                this.Controls.SetChildIndex(this.label1, 0);
+                this.Controls.SetChildIndex(this.label2, 0);
+                this.Controls.SetChildIndex(this.button1, 0);
+                this.Controls.SetChildIndex(this.button2, 0);
+                this.Controls.SetChildIndex(this.button3, 0);
+                this.Controls.SetChildIndex(this.button4, 0);
+                this.ResumeLayout(false);
 
-                    //label1
-                    this.label1.Location = new System.Drawing.Point(370, 180);
-                    label1.ForeColor = Color.Red;
+                nowskin = 3;
+            }
+            else if (nowskin == 3)
+            {
+                //set view to B10332036 & set nowskin to 4
+                this.SuspendLayout();
 
-                    //label2
-                    this.label2.Location = new System.Drawing.Point(370, 220);
-                    label2.ForeColor = Color.Green;
+                // panel1
+                this.panel1.BackColor = System.Drawing.Color.Blue;
+                this.panel1.Location = new System.Drawing.Point(5, 5);
 
-                    //button1
-                    this.button1.BackColor = System.Drawing.Color.Gold;
-                    this.button1.Location = new System.Drawing.Point(370, 280);
+                // panel2
+                this.panel2.BackColor = System.Drawing.Color.Blue;
+                this.panel2.Location = new System.Drawing.Point(370, 5);
 
-                    //button2
-                    this.button2.BackColor = System.Drawing.Color.Gold;
-                    this.button2.Location = new System.Drawing.Point(370, 340);
+                //label1
+                this.label1.Location = new System.Drawing.Point(370, 180);
+                label1.ForeColor = Color.Red;
 
-                    //button3
-                    this.button3.BackColor = System.Drawing.Color.Gold;
-                    this.button3.Location = new System.Drawing.Point(370, 400);
+                //label2
+                this.label2.Location = new System.Drawing.Point(370, 220);
+                label2.ForeColor = Color.Green;
 
-                    //button4
-                    this.button4.BackColor = System.Drawing.Color.Gold;
-                    this.button4.Location = new System.Drawing.Point(370, 460);
+                //button1
+                this.button1.BackColor = System.Drawing.Color.Gold;
+                this.button1.Location = new System.Drawing.Point(370, 280);
 
-                    // 
-                    // B10332036_view
-                    // 
-                    this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-                    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-                    this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-                    this.ClientSize = new System.Drawing.Size(535, 530);
-                    this.Name = "B10332036_view";
+                //button2
+                this.button2.BackColor = System.Drawing.Color.Gold;
+                this.button2.Location = new System.Drawing.Point(370, 340);
 
-                    this.ResumeLayout(false);
-                    break;
-                //case 2:
-                //case 3:
-                //case 4:
+                //button3
+                this.button3.BackColor = System.Drawing.Color.Gold;
+                this.button3.Location = new System.Drawing.Point(370, 400);
+
+                //button4
+                this.button4.BackColor = System.Drawing.Color.Gold;
+                this.button4.Location = new System.Drawing.Point(370, 460);
+
+                // 
+                // B10332036_view
+                // 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                this.ClientSize = new System.Drawing.Size(550, 600);
+                this.Name = "B10332036_view";
+
+                this.ResumeLayout(false);
+
+                nowskin = 4;
+            }
+            else if (nowskin == 4)
+            {
+                //set view to B10415016 & set nowskin to 0
+                this.SuspendLayout();
+                this.panel1.SuspendLayout();
+                this.panel2.SuspendLayout();
+                // 
+                // panel1
+                // 
+                this.panel1.BackColor = System.Drawing.Color.BlanchedAlmond;
+                // 
+                // panel2
+                // 
+                this.panel2.BackColor = System.Drawing.Color.BlanchedAlmond;
+                // 
+                // timer1
+                // 
+                this.timer1.Enabled = true;
+                // 
+                // B10415016_view
+                // 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                this.ClientSize = new System.Drawing.Size(535, 530);
+                this.Name = "B10415016_view";
+                this.Text = "Tetris";
+
+                this.ResumeLayout(false);
+                this.panel1.ResumeLayout(false);
+                this.panel2.ResumeLayout(false);
+
+                nowskin = 0;
             }
 
         }
