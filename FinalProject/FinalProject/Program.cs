@@ -18,7 +18,7 @@ namespace FinalProject
             Application.SetCompatibleTextRenderingDefault(false);
             //B10415016_view is design by mike, calling func like this will start with apparent my design
             //Application.Run(new B10415016_view());
-            Application.Run(new B10332036_view());
+            Application.Run(new B10415039_view());
         }
     }
 }
