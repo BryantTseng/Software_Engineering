@@ -18,7 +18,7 @@ namespace FinalProject
         private bool finish_flag;
         private Blocks nowBlock, nextBlock;
         protected int nowTime = 0;
-        private int nowskin = 2;//0 = 16, 1 = 38, 2 = 39, 3 = 40, 4 = 36
+        private int nowskin = 0;//0 = 39, 1 = 38, 2 = 40, 3 = 36, 4 = 16
         PictureBox[] initialCubesOnShow, initialCubesOnNext;
         private String[] Type = { "T", "Z", "l", "Lightning", "L", "J", "O" };
         
