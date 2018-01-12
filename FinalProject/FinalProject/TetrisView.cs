@@ -126,10 +126,6 @@ namespace FinalProject
                 this.button3.Location = new System.Drawing.Point(340, 550);
                 this.button3.UseVisualStyleBackColor = false;
                 // 
-                // timer1
-                // 
-                this.timer1.Enabled = true;
-                // 
                 // button4
                 // 
                 this.button4.BackColor = System.Drawing.Color.Cyan;
@@ -324,11 +320,11 @@ namespace FinalProject
                 this.SuspendLayout();
 
                 // panel1
-                this.panel1.BackColor = System.Drawing.Color.Blue;
+                this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
                 this.panel1.Location = new System.Drawing.Point(5, 5);
 
                 // panel2
-                this.panel2.BackColor = System.Drawing.Color.Blue;
+                this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
                 this.panel2.Location = new System.Drawing.Point(370, 5);
 
                 //label1
@@ -417,10 +413,6 @@ namespace FinalProject
                 this.button3.BackColor = System.Drawing.SystemColors.Control;
                 this.button3.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.button3.UseVisualStyleBackColor = false;
-                // 
-                // timer1
-                // 
-                this.timer1.Enabled = true;
                 // 
                 // button4
                 // 
